@@ -1,0 +1,154 @@
+@import './scss/reset.scss';
+@import 'fonts.scss';
+
+$red: #d41938;
+$hRed: #f00028;
+$dRed: #af152e;
+$bRed: #710D1E;
+$blue: #0e6bcb;
+$hBlue:  #117ae4;
+$dBlue:  #0e5097;
+$bBlue:  #073565;
+$green: #2a8f0d;
+$hGreen: #30a111;
+$dGreen: #1e610a;
+$bGreen: #154706;
+$yellow: #d89e00;
+$hYellow: #f0b000;
+$dYellow: #a37800;
+$bYellow: #6C4F00;
+$white: #e0e0e0;
+$hWhite: #bebebe;
+$dWhite: #a8a8a8;
+$bWhite: #838383;
+
+@mixin ui-block($width, $height, $bWidth){
+    width: $width;
+    height: $height;
+    border-radius: 8px;
+    border-width: 1px 1px $bWidth 1px;
+    border-style: solid;
+}
+
+body {
+    color: black
+}
+
+h1 {
+    font-family: 'Luckiest Guy', cursive
+}
+
+p {
+    font-family: 'Jua', sans-serif,
+}
+
+input[type=text]{
+    @include ui-block(80%, 25px, .5vh);
+    margin: 8px 8% 8px 8%;
+    background-color: white;
+    border-color: $dWhite;
+    border-width: 0px 1px .5vh 1px;
+    padding-left: 8px;
+    outline: none;
+}
+
+.ui-block-lg {
+    @include ui-block(100%, 500px, 1.5vh);
+}
+
+.ui-button-sm {
+    transition: .05s;
+    font-family: 'Jua', sans-serif;
+    color: white;
+    display: inline-block;
+    border-radius: 4px;
+    border-width: 0px 0px 4px 0px; // If changing bottom border remember to change hover top to match
+    border-style: solid;
+    margin: 0 2px 0 2px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: inset 0px 8px 2px -6px #ffffff80;
+    &:hover {
+        position: relative;
+        top: -1px; // Here
+        border-width: 0px 0px 5px 0px;
+    }
+    &:active {
+        position: relative;
+        top: 3px; // Here
+        border-width: 0px 0px 1px 0px;
+        box-shadow: inset 0px 8px 2px -6px #ffffff00;
+    }
+    
+    &.red {
+        &:hover { background-color: $hRed; }
+        &:active { background-color: $dRed; }
+    }
+    
+    &.blue {
+        &:hover { background-color: $hBlue; }
+        &:active { background-color: $dBlue; }
+    }
+    
+    &.green {
+        &:hover { background-color: $hGreen; }
+        &:active { background-color: $dGreen; }
+    }
+    
+    &.yellow {
+        &:hover { background-color: $hYellow; }
+        &:active { background-color: $dYellow; }
+    }
+
+    &.default {
+        background-color: rgb(182, 182, 182);
+        border-color: $dWhite;
+        &:hover { background-color: $hWhite }
+        &:active { background-color:$dWhite; }
+    }
+}
+
+.default {
+    background-color: whitesmoke;
+    border-color: $bWhite;
+}
+
+.red {
+    background-color: $red;
+    border-color: $bRed;
+}
+
+.blue {
+    background-color: $blue;
+    border-color: $bBlue;
+}
+
+.green {
+    background-color: $green;
+    border-color: $bGreen;
+}
+
+.yellow {
+    background-color: $yellow;
+    border-color: $bYellow;
+}
+
+.container-flex {
+    background-color: #073565;
+    align-items: center;
+    // height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+}
+
+.flex-item {
+    width: 100px; 
+    height: 100px;
+    background-color: red; 
+    margin: 2px;
+
+    &.grow {
+        flex-grow: 1;
+    }
+}
