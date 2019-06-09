@@ -2,12 +2,16 @@
   <div class='home'>
     <div v-if="!loading">
       {{ info.USD }}
+
+      HELLO: {{ hello }}
+      SECRET: {{ secret }}
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import { log } from 'util';
 
 export default {
   name: 'home',
@@ -15,7 +19,9 @@ export default {
     return {
       info: '',
       loading: '',
-      errored: ''
+      errored: '',
+      hello: '',
+      secret: ''
     }
   },
   methods: {
@@ -25,7 +31,9 @@ export default {
     // Computed
   },
   mounted() {
-    console.log('Hola ma mia');
+    this.hello = process.env.VUE_APP_HELLO
+    this.secret = process.env.VUE_APP_SECRET
+    console.log(`ID:${process.env.VUE_APP_OD_API_ID} KEY:${process.env.VUE_APP_OD_API_KEY}`);
     
     axios
       .get('https://api.coindesk.com/v1/bpi/currentprice.json')
