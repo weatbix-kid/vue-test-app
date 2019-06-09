@@ -1,44 +1,42 @@
 <template>
   <div class='home'>
-    <!-- <img alt='Vue logo' src='../assets/logo.png'> -->
-    <HelloWorld @incValEvent='incrementCount' msg='Hover me boi!'/>
-    <div>{{ currentCount }}</div>
-    <div class='ui-block-lg default' style="text-align:center;">
-      <input v-model='phrase' type='text' placeholder='Type here'/>
-      <button class='ui-button-sm red' @click="incrementCount">Yee haaw brother</button>
-      <button class='ui-button-sm blue' @click="incrementCount">Yee haaw brother</button>
-      <button class='ui-button-sm green' @click="incrementCount">Yee haaw brother</button>
-      <button class='ui-button-sm yellow' @click="incrementCount">Yee haaw brother</button>
-      <button class='ui-button-sm default' @click="incrementCount">Yee haaw brother</button>
+    <div v-if="!loading">
+      {{ info.USD }}
     </div>
-
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import axios from 'axios'
 
 export default {
   name: 'home',
-  components: {
-    HelloWorld
-  },
   data() {
     return {
-      phrase: 'Yeee haww',
-      counter: 0
+      info: '',
+      loading: '',
+      errored: ''
     }
   },
   methods: {
-    incrementCount(){
-      this.counter++
-    }
+    // Methods
   },
   computed: {
-    currentCount() {
-      return `${this.phrase} we at ${this.counter} yee haws`
-    } 
+    // Computed
+  },
+  mounted() {
+    console.log('Hola ma mia');
+    
+    axios
+      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+      .then(response => {
+        this.info = response.data.bpi
+      })
+      .catch(error => {
+        console.log(error)
+        this.errored = true
+      })
+      .finally(() => this.loading = false)
   }
 }
 </script>

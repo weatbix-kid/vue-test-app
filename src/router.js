@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import CopyOfHome from './views/CopyOfHome.vue'
 import RouteTest from './views/RouteTest.vue'
 import FlexBoxPlayground from './views/FlexBoxPlayground.vue'
 
@@ -12,6 +13,11 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/copy',
+      name: 'copyOfHome',
+      component: CopyOfHome
     },
     {
       path: '/about',
