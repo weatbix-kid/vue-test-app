@@ -1,50 +1,46 @@
 <template>
   <div class='home'>
-    <div v-if="!loading">
-      {{ info.USD }}
-
-      HELLO: {{ hello }}
-      SECRET: {{ secret }}
+    <!-- <img alt='Vue logo' src='../assets/logo.png'> -->
+    <HelloWorld @incValEvent='incrementCount' msg='Hover me boi!'/>
+    <div>{{ currentCount }}</div>
+    <div class='ui-block-lg default' style="text-align:center;">
+      <input v-model='phrase' type='text' placeholder='Type here'/>
+      <button class='ui-button-sm red' @click="incrementCount">Yee haaw brother</button>
+      <button class='ui-button-sm blue' @click="incrementCount">Yee haaw brother</button>
+      <button class='ui-button-sm green' @click="incrementCount">Yee haaw brother</button>
+      <button class='ui-button-sm yellow' @click="incrementCount">Yee haaw brother</button>
+      <button class='ui-button-sm default' @click="incrementCount">Yee haaw brother</button>
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
-import { log } from 'util';
+// @ is an alias to /src
+import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'home',
+  components: {
+    HelloWorld
+  },
   data() {
     return {
-      info: '',
-      loading: '',
-      errored: '',
-      hello: '',
-      secret: ''
+      phrase: 'Yeee haww',
+      counter: 0,
     }
   },
   methods: {
-    // Methods
+    incrementCount(){
+      this.counter++
+    }
   },
   computed: {
-    // Computed
+    currentCount() {
+      return `${this.phrase} we at ${this.counter} yee haws`
+    } 
   },
   mounted() {
-    this.hello = process.env.VUE_APP_HELLO
-    this.secret = process.env.VUE_APP_SECRET
-    console.log(`ID:${process.env.VUE_APP_OD_API_ID} KEY:${process.env.VUE_APP_OD_API_KEY}`);
-    
-    axios
-      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-      .then(response => {
-        this.info = response.data.bpi
-      })
-      .catch(error => {
-        console.log(error)
-        this.errored = true
-      })
-      .finally(() => this.loading = false)
+    console.log(`HELLO:${process.env.VUE_APP_HELLO} SECRET:${process.env.VUE_APP_SECRET}`)
   }
 }
 </script>
