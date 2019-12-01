@@ -6,6 +6,16 @@ import router from './router'
 Vue.config.productionTip = false
 
 new Vue({
+    data() {
+      return {
+        testRootData: 'Hello world',
+      }
+    },
+    methods: {
+      printTestData(){
+        console.log(this.testRootData)
+      }
+    },
   // axios,
   router,
   render: h => h(App)

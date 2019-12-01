@@ -5,11 +5,13 @@
     <div>{{ currentCount }}</div>
     <div class='ui-block-lg default' style="text-align:center;">
       <input v-model='phrase' type='text' placeholder='Type here'/>
-      <button class='ui-button-sm red' @click="incrementCount">Yee haaw brother</button>
-      <button class='ui-button-sm blue' @click="incrementCount">Yee haaw brother</button>
-      <button class='ui-button-sm green' @click="incrementCount">Yee haaw brother</button>
-      <button class='ui-button-sm yellow' @click="incrementCount">Yee haaw brother</button>
-      <button class='ui-button-sm default' @click="incrementCount">Yee haaw brother</button>
+      <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around;">
+        <button class='ui-button-sm red' @click="incrementCount">Yee haaw brother</button>
+        <button class='ui-button-sm blue' @click="incrementCount">Yee haaw brother</button>
+        <button class='ui-button-sm green' @click="incrementCount">Yee haaw brother</button>
+        <button class='ui-button-sm yellow' @click="incrementCount">Yee haaw brother</button>
+        <button class='ui-button-sm default' @click="incrementCount">Yee haaw brother</button>
+      </div>
     </div>
   </div>
 </template>

@@ -1,4 +1,4 @@
-@import './scss/reset.scss';
+@import './reset.scss';
 @import 'fonts.scss';
 
 $red: #d41938;
@@ -58,6 +58,8 @@ input[type=text]{
 
 .ui-button-sm {
     transition: .05s;
+    height: 65px;
+    width: 260px;
     font-family: 'Jua', sans-serif;
     color: white;
     display: inline-block;
