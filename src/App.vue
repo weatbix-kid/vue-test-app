@@ -9,14 +9,11 @@
 </template>
 
 <style lang='sass'>
-@import './assets/scss/style.scss'
+@import './assets/scss/_main.scss'
 </style>
 
 <script>
 export default {
-  // Move assets back to src and remove assets from path it constinues to be shit
+
 }
 </script>
-
-
-

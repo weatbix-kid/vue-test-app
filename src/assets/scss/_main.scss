@@ -1,34 +1,7 @@
-@import './reset.scss';
-@import 'fonts.scss';
-
-$red: #d41938;
-$hRed: #f00028;
-$dRed: #af152e;
-$bRed: #710D1E;
-$blue: #0e6bcb;
-$hBlue:  #117ae4;
-$dBlue:  #0e5097;
-$bBlue:  #073565;
-$green: #2a8f0d;
-$hGreen: #30a111;
-$dGreen: #1e610a;
-$bGreen: #154706;
-$yellow: #d89e00;
-$hYellow: #f0b000;
-$dYellow: #a37800;
-$bYellow: #6C4F00;
-$white: #e0e0e0;
-$hWhite: #bebebe;
-$dWhite: #a8a8a8;
-$bWhite: #838383;
-
-@mixin ui-block($width, $height, $bWidth){
-    width: $width;
-    height: $height;
-    border-radius: 8px;
-    border-width: 1px 1px $bWidth 1px;
-    border-style: solid;
-}
+@import '_reset.scss';
+@import '_fonts.scss';
+@import '_variables.scss';
+@import '_mixins.scss';
 
 body {
     color: black
@@ -50,10 +23,6 @@ input[type=text]{
     border-width: 0px 1px .5vh 1px;
     padding-left: 8px;
     outline: none;
-}
-
-.ui-block-lg {
-    @include ui-block(100%, 500px, 1.5vh);
 }
 
 .ui-button-sm {
