@@ -1,12 +1,12 @@
 
-@mixin ui-block($width, $height, $bWidth){
-    width: $width;
-    height: $height;
-    border-radius: 8px;
-    border-width: 1px 1px $bWidth 1px;
-    border-style: solid;
+@mixin ui-block ($height, $width, $bWidth) {
+  width: $width;
+  height: $height;
+  border-width: 1px 1px $bWidth 1px;
+  border-radius: 8px;
+  border-style: solid;
 }
 
 .ui-block-lg {
-    @include ui-block(100%, 500px, 1.5vh);
+  @include ui-block(500px, 100%, 1.5vh);
 }

@@ -4,122 +4,122 @@
 @import '_mixins.scss';
 
 body {
-    color: black
+  color: black
 }
 
 h1 {
-    font-family: 'Luckiest Guy', cursive
+  font-family: 'Luckiest Guy', cursive
 }
 
 p {
-    font-family: 'Jua', sans-serif,
+  font-family: 'Jua', sans-serif,
 }
 
 input[type=text]{
-    @include ui-block(80%, 25px, .5vh);
-    margin: 8px 8% 8px 8%;
-    background-color: white;
-    border-color: $dWhite;
-    border-width: 0px 1px .5vh 1px;
-    padding-left: 8px;
-    outline: none;
+  @include ui-block(25px, 80%, .5vh);
+  margin: 8px 8% 8px 8%;
+  background-color: white;
+  border-color: $dWhite;
+  border-width: 0px 1px .5vh 1px;
+  padding-left: 8px;
+  outline: none;
 }
 
 .ui-button-sm {
-    transition: .05s;
-    height: 65px;
-    width: 260px;
-    font-family: 'Jua', sans-serif;
-    color: white;
-    display: inline-block;
-    border-radius: 4px;
-    border-width: 0px 0px 4px 0px; // If changing bottom border remember to change hover top to match
-    border-style: solid;
-    margin: 0 2px 0 2px;
-    cursor: pointer;
-    outline: none;
-    box-shadow: inset 0px 8px 2px -6px #ffffff80;
-    &:hover {
-        position: relative;
-        top: -1px; // Here
-        border-width: 0px 0px 5px 0px;
-    }
-    &:active {
-        position: relative;
-        top: 3px; // Here
-        border-width: 0px 0px 1px 0px;
-        box-shadow: inset 0px 8px 2px -6px #ffffff00;
-    }
-    
-    &.red {
-        &:hover { background-color: $hRed; }
-        &:active { background-color: $dRed; }
-    }
-    
-    &.blue {
-        &:hover { background-color: $hBlue; }
-        &:active { background-color: $dBlue; }
-    }
-    
-    &.green {
-        &:hover { background-color: $hGreen; }
-        &:active { background-color: $dGreen; }
-    }
-    
-    &.yellow {
-        &:hover { background-color: $hYellow; }
-        &:active { background-color: $dYellow; }
-    }
+  display: inline-block;
+  height: 65px;
+  width: 260px;
+  color: white;
+  font-family: 'Jua', sans-serif;
+  transition: .05s;
+  border-radius: 4px;
+  border-width: 0px 0px 4px 0px; // If changing bottom border remember to change hover top to match
+  border-style: solid;
+  margin: 6px 2px 0 2px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: inset 0px 8px 2px -6px #ffffff80;
+  &:hover {
+    position: relative;
+    top: -1px; // Here
+    border-width: 0px 0px 5px 0px;
+  }
+  &:active {
+    position: relative;
+    top: 3px; // Here
+    border-width: 0px 0px 1px 0px;
+    box-shadow: inset 0px 8px 2px -6px #ffffff00;
+  }
+  
+  &.red {
+    &:hover { background-color: $hRed; }
+    &:active { background-color: $dRed; }
+  }
+  
+  &.blue {
+    &:hover { background-color: $hBlue; }
+    &:active { background-color: $dBlue; }
+  }
+  
+  &.green {
+    &:hover { background-color: $hGreen; }
+    &:active { background-color: $dGreen; }
+  }
+  
+  &.yellow {
+    &:hover { background-color: $hYellow; }
+    &:active { background-color: $dYellow; }
+  }
 
-    &.default {
-        background-color: rgb(182, 182, 182);
-        border-color: $dWhite;
-        &:hover { background-color: $hWhite }
-        &:active { background-color:$dWhite; }
-    }
+  &.default {
+    background-color: rgb(182, 182, 182);
+    border-color: $dWhite;
+    &:hover { background-color: $hWhite }
+    &:active { background-color:$dWhite; }
+  }
 }
 
 .default {
-    background-color: whitesmoke;
-    border-color: $bWhite;
+  background-color: whitesmoke;
+  border-color: $bWhite;
 }
 
 .red {
-    background-color: $red;
-    border-color: $bRed;
+  background-color: $red;
+  border-color: $bRed;
 }
 
 .blue {
-    background-color: $blue;
-    border-color: $bBlue;
+  background-color: $blue;
+  border-color: $bBlue;
 }
 
 .green {
-    background-color: $green;
-    border-color: $bGreen;
+  background-color: $green;
+  border-color: $bGreen;
 }
 
 .yellow {
-    background-color: $yellow;
-    border-color: $bYellow;
+  background-color: $yellow;
+  border-color: $bYellow;
 }
 
 .container-flex {
-    background-color: #073565;
-    align-items: center;
-    // height: 500px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: stretch;
+  background-color: #073565;
+  align-items: center;
+  // height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
 }
 
 .flex-item {
-    width: 100px; 
-    height: 100px;
-    background-color: red; 
-    margin: 2px;
+  width: 100px; 
+  height: 100px;
+  background-color: red; 
+  margin: 2px;
 
-    &.grow {
-        flex-grow: 1;
-    }
+  &.grow {
+    flex-grow: 1;
+  }
 }
